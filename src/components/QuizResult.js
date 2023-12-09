@@ -1,11 +1,14 @@
 import React from 'react'
 
-const QuizResult = ({score,totalScore}) => {
+const QuizResult = ({score,totalScore,tryAgain}) => {
   return (
-    <div>
+    <> 
+    <div className='show-score'>
      Your Score: {score} <br/>
      Total Score: {totalScore}
     </div>
+    <button id="next-button" onClick={tryAgain}>Try Again</button>
+    </>
   )
 }
 

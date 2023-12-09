@@ -21,12 +21,18 @@ const Quiz = () => {
       if(clickedOption===QuizData[currentQuestions].answer)
       setScore(score+1);
     }
+    const resetAll = () => {
+      setShowResult(false)
+      setCurrentQuestion(0)
+      setClickedOption(0)
+      setScore(0)
+    }
   return (
     <div>
       <p className='heading-txt'>TODO APP</p>
       <div className='container'>
         {showResult ? (
-          <QuizResult score={score} totalScore={QuizData.length}/>
+          <QuizResult score={score} totalScore={QuizData.length} tryAgain={resetAll}/> 
         ):(
           <>
         <div className='question'>
